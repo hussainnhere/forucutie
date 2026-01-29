@@ -1,10 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>This one is for my Varchhu</title>
-
 <style type="text/css">
 @font-face {
 	font-family: digit;
@@ -15,11 +14,8 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/garden.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
-
 </head>
-
 <body>
-
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">
@@ -39,32 +35,36 @@
 			There have been fights ;<br />
 			<span class="comments">// And I'm sure there will be more.</span><br />
 			But our Bond will always grow back Stronger;<br />
-			<br>
-			<br>
+			<br><br>
 			All I want to say is:<br />
 			Baby, I will love you forever;<br />
-			<br>
-			<br>
+			<br><br>
 			Now If you want to hug me you can touch the heart below<br />
 			<br>
 			<span id="heartspan">
-			<a href="2xz.gif"><i class="fas fa-heart" id="icon"></i></a>
+				<a href="javascript:void(0)" onclick="document.getElementById('gif-overlay').style.display='flex'">
+					<i class="fas fa-heart" id="icon"></i>
+				</a>
 			</span>
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
 			<div id="words">
 				<div id="messages">
-					TOGETHER FOREVER
+					वर्षा ऋतु FOREVER
 					<div id="elapseClock"></div>
 				</div>
 				<div id="loveu">
 					I LOVE YOU SO MUCH<br/>
-					<div class="signature">- HUSSAIN</div>
+					<div class="signature">- RITVIK</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div id="gif-overlay" onclick="this.style.display='none'" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; justify-content:center; align-items:center;">
+    <img src="hug.gif" alt="Surprise!" style="max-width:100%; max-height:100%; object-fit:contain;">
 </div>
 
 <script type="text/javascript">
@@ -80,16 +80,13 @@ together.setMilliseconds(0);
 if (!document.createElement('canvas').getContext) {
 	var msg = document.createElement("div");
 	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	msg.innerHTML = "Your browser doesn't support HTML5!"; 
 	document.body.appendChild(msg);
 	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
 } else {
 	setTimeout(function () {
 		startHeartAnimation();
-	}, 5000);
+	}, 5000); // Back to original 5 second delay
 
 	timeElapse(together);
 	setInterval(function () {
